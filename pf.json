@@ -1,0 +1,27 @@
+{
+	[
+		{
+                	"target": "#RegistrationForm_first_name",
+                	"value": "First Name",
+			"type": "input" 
+        	},{
+                	"target": "#RegistrationForm_last_name",
+                	"value": "Last Name",
+			"type": "input" 
+        	},{
+                	"target": "#RegistrationForm_email",
+                	"value": "email@email.com",
+			"type": "input" 
+        	},{
+                	"target": "#RegistrationForm_tax_identification",
+                	"value": "123.123.123-87",
+			"type": "input" 
+        	},{
+                	"target": "#RegistrationForm_gender",
+                	"value": "male",
+			"type": "select" 
+        	}
+
+
+	]
+}
