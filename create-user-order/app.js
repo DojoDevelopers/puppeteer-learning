@@ -4,10 +4,6 @@ const pf = require('./config.js');
 
 let url = 'https://mobly.com.br';
 
-console.log(config.people);
-console.log(config.url);
-
-
 (async () => {
         const browser = await puppeteer.launch({headless: false, args: ['--no-sandbox', '--disable-setuid-sandbox']});
         const page = await browser.newPage();
@@ -67,8 +63,10 @@ console.log(config.url);
             await page.type(checkout.target,checkout.value);
                    
         }
-        await page.waitForSelector('#checkoutBtn', {visible: true})
-        await page.click('#checkoutBtn')
+        //await page.waitForSelector('.sel-checkout-send', {visible: true})
+        await page.waitFor(4000);
+        await page.click('.sel-checkout-send')
+        await page.screenshot({path: 'orderFinish.png'});
 
 
 
@@ -120,22 +118,3 @@ async function searchFor(term, page) {
     }
     return productsData;
 }
-
-
-//await page.click("#radioTypeCompany");
-//await page.click("#RegistrationForm_state_tax_number_free");
-
-//	await page.type("#RegistrationForm_legal_name", 'Legal name');
-//	await page.type("#RegistrationForm_fantasy_name", 'Legal name');
-//	await page.type(".company-email", 'emai@a.com');
-//	await page.type("#RegistrationForm_password", '123456');
-//	await page.type("#RegistrationForm_password2", '123456');
-//	
-//	await page.focus('#RegistrationForm_company_tax_identification');
-//	await page.type("#RegistrationForm_company_tax_identification","00000000000191");
-//	await page.select("#RegistrationForm_fk_customer_address_region", '41');
-//	await page.select("#RegistrationForm_fk_customer_segment", '13');
-
-
-// await browser.close();
-
